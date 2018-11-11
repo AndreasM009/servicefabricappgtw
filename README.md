@@ -81,3 +81,7 @@ Now the cluster can be deployed using Azure reource group deployment
 ``` Powershell
 New-AzureRmResourceGroupDeployment -Name Init -ResourceGroupName $rg.ResourceGroupName -TemplateFile .\azuredeploy.json -TemplateParameterFile .\azuredeploy.parameters.json
 ```
+
+## Deploy Sample Application
+
+Coming soon
