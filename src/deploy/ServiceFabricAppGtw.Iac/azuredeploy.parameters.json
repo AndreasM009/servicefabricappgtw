@@ -1,0 +1,25 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "clusterName": { "value": "anmocksftestcluster" },
+    "adminUserName": { "value": "m009" },
+    "adminPassword": {
+      "reference": {
+        "keyVault": {
+          "id": "/subscriptions/c309f4ef-c319-482b-8889-9076684e38f2/resourceGroups/SF-TEST-RG/providers/Microsoft.KeyVault/vaults/sftestrgkv"
+        },
+        "secretName": "AdminPassword"
+      }
+    },
+    "vmImagePublisher": { "value": "MicrosoftWindowsServer" },
+    "vmImageOffer": { "value": "WindowsServer" },
+    "vmImageSku": { "value": "2016-Datacenter-with-Containers" },
+    "vmImageVersion": { "value": "latest" },
+    "clusterCertificateStoreValue": { "value": "My" },
+    "clusterCertificateThumbprint": { "value": "B42BE5DDE907067FF66815A42ACD60CA704130F7" },
+    "sourceVaultValue": { "value": "/subscriptions/c309f4ef-c319-482b-8889-9076684e38f2/resourceGroups/SF-TEST-RG/providers/Microsoft.KeyVault/vaults/sftestrgkv" },
+    "clusterCertificateUrlValue": { "value": "https://sftestrgkv.vault.azure.net:443/secrets/ClusterCertificate/8571768822c5421b80eac9a9aab44e98" },
+    "nt0InstanceCount": { "value": 3 }
+  }
+}

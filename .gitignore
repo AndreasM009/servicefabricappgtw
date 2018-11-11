@@ -3,3 +3,13 @@
 ################################################################################
 
 /src/deploy/.vs
+/src/example/.vs/ExampleApplication/v15
+/src/example/ExampleApplication/obj/x64/Debug
+/src/example/ExampleApplication/pkg/Debug
+/src/example/ExampleApplication/PublishProfiles
+/src/example/ExampleApplication/ExampleApplication.sfproj.user
+/src/example/ExampleApplication/ExampleApplication.sfproj
+/src/example/packages/Microsoft.VisualStudio.Azure.Fabric.MSBuild.1.6.6
+/src/example/WebService/bin/Debug/netcoreapp2.0/win7-x64
+/src/example/WebService/obj
+/src/example/WebService/Properties/launchSettings.json
