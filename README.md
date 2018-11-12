@@ -8,8 +8,8 @@ Service Fabric has two Tcp endpoints to manage the cluster.
 1. Fabric Gateway to manage the cluster and application
 2. Fabric Http Gateway to get access to Service Fabric explorer 
 
-In order to keep this endpoints accessible a Azure Load Balancer is used that balances traffic to these endpoints. In the described scenario a public IP is used to get public access to these endpoints. A self signed certificate is used to secure the cluster and to authenticate clients against the management endpoints. 
-The endpoints are keept public to get an easy access for the deployment of new applications.
+In order to keep this endpoints accessible an Azure Load Balancer is used that balances traffic to these endpoints. In the described scenario a public IP is used to get public access to these endpoints. A self signed certificate is used to secure the cluster and to authenticate clients against the management endpoints. 
+The endpoints are kept public to get an easy access for the deployment of new applications.
 In a more secure scenario an internal load balancer with a private IP should be used.
 
 ## Endpoints to applications running on Service Fabric Cluster
@@ -34,13 +34,13 @@ To store the cluster certificate and the Administrator password we need an Azure
 $kv = New-AzureRmKeyVault -Name sftestrgkv -ResourceGroupName $rg.ResourceGroupName -Location westeurope -EnabledForDeployment -EnabledForTemplateDeployment
 ```
 
-After the Key Vault is created we nned to set a secret for the Administrator password.
+After the Key Vault is created we need to set a secret for the Administrator password.
 
 ``` Powershell
 $pwd = Set-AzureKeyVaultSecret -VaultName $kv.VaultName -Name AdminPassword -SecretValue (ConvertTo-SecureString -String <password> -AsPlainText -Force)
 ```
 
-Now we need to create a slef signed certificate.
+Now we need to create a self signed certificate.
 
 ``` Powershell
 $cert = New-SelfSignedCertificate -DnsName "sftestcluster.westeurope.cloudapp.azure.com" -FriendlyName sftestcluster -CertStoreLocation "Cert:\CurrentUser\My\"
