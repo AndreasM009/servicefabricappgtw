@@ -84,4 +84,7 @@ New-AzureRmResourceGroupDeployment -Name Init -ResourceGroupName $rg.ResourceGro
 
 ## Deploy Sample Application
 
-Coming soon
+There is an example Service Fabric application located [here](/src/example). 
+It is a simple ASP.NET Core API project running on port 80 with Swagger enabled.
+
+Just open the Visual Studio solution and deploy the application to your remote cluster.  
